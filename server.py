@@ -102,8 +102,7 @@ material_symbols_css = """
 }
 """
 
-full_css = ""
-full_css += material_symbols_css
+full_css = f"{material_symbols_css}"
 full_css += css_tortoise
 full_css += history_css
 full_css += bark_css

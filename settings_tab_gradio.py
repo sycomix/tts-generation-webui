@@ -65,9 +65,12 @@ def settings_tab_gradio(save_config, reload_config_and_restart_ui, gradio_interf
                 save_beacon_2 = gr.Markdown("")
 
                 # Map over the UI elements
-                for key, _ in gradio_interface_options_ui.items():
-                    gradio_interface_options_ui[key].change(
-                        fn=lambda *inputs2: save_config(keys, inputs2), inputs=inputs, outputs=[save_beacon_2])
+                for value_ in gradio_interface_options_ui.values():
+                    value_.change(
+                        fn=lambda *inputs2: save_config(keys, inputs2),
+                        inputs=inputs,
+                        outputs=[save_beacon_2],
+                    )
 
                 reload_config_and_restart_ui_button = gr.Button(
                     # value="Reload config and restart UI",
